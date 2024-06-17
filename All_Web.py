@@ -16,28 +16,36 @@ from streamlit_option_menu import option_menu
 
 
 ### Diabetes Prediction
-diabetes_sav = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/1.Diabetes_prediction/trained_diabetes_model.sav",'rb'));
-diabetes_scaler = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/1.Diabetes_prediction/scaler.sav",'rb'))
+diabetes_sav = pickle.load(open("trained_diabetes_model.sav",'rb'));
+diabetes_scaler = pickle.load(open("scaler.sav",'rb'))
 
 ### Loan Sanction Prediction
-loan_sav = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/2.Loan_Prediction/Loan_status_predictor.sav",'rb'))
-loan_scaler = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/2.Loan_Prediction/Loan_status_scaler.sav",'rb'))
+loan_sav = pickle.load(open("Loan_status_predictor.sav",'rb'))
+loan_scaler = pickle.load(open("Loan_status_scaler.sav",'rb'))
 
 ## Heart Failure 
-heart_sav = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/3.Heart_Failure_prediction/Heart_Disease_pred.sav",'rb'))
-heart_scaler = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/3.Heart_Failure_prediction/Heart_scaler.sav",'rb'))
+heart_sav = pickle.load(open("Heart_Disease_pred.sav",'rb'))
+heart_scaler = pickle.load(open("Heart_scaler.sav",'rb'))
 
 ### Medical Insurance 
-medical_insurance_sav = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/4.Medical_insurance/Insurance_model.sav",'rb'))
+medical_insurance_sav = pickle.load(open("Insurance_model.sav",'rb'))
 
 ## Movie recommended system
-df = pd.read_csv('C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/5.Movie_Recommended/movies_Recom.csv')
-movie_similarity = pickle.load(open('C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/5.Movie_Recommended/movie_similarity.sav','rb'))
-list_of_movies = pickle.load(open('C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/5.Movie_Recommended/all_movies.sav','rb'))
+file_url = "https://github.com/adithyakadukuntla/MovieRecommendedSystem/releases/download/untagged-9713449c24611040cf77/movie_similarity.sav"
+
+# Download the file from GitHub
+response = requests.get(file_url)
+
+# Save the file locally
+with open('movie_similarity.sav', 'wb') as f:
+    f.write(response.content)
+df = pd.read_csv('movies_Recom.csv')
+movie_similarity = pickle.load(open('movie_similarity.sav','rb'))
+list_of_movies = pickle.load(open('all_movies.sav','rb'))
 
 ## Parkinsons prdiction
-pd_scaler = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/6.Parkinsons's_Disease_Pred/scaler_parkinsons.sav",'rb'))
-pd_model = pickle.load(open("C:/Users/Lenovo/OneDrive/Desktop/today/Machine_Learning/6.Parkinsons's_Disease_Pred/parkinsons_LOR_model.sav",'rb'))
+pd_scaler = pickle.load(open("scaler_parkinsons.sav",'rb'))
+pd_model = pickle.load(open("parkinsons_LOR_model.sav",'rb'))
 
 
 with st.sidebar:
