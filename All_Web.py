@@ -6,6 +6,7 @@ Created on Mon Jun 17 18:47:14 2024
 """
 
 import pickle
+import requests
 import pandas as pd
 import numpy as np
 import streamlit as st
