@@ -1,2 +1,3 @@
+pickle
 streamlit
 streamlit-option-menu
